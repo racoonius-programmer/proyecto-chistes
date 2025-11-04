@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  servicio-chistes:
+    build: ./servicio-chistes
+    container_name: 'generador_de_chistes'
+    ports:
+      - "5000:5000"
+    depends_on:
+      - servicio-emojis
+
+
+  servicio-emojis:
+    build: ./servicio-emojis
+    container_name: 'proveedor_de_emojis'
+    ports:
+      - "5001:5001"
