@@ -14,7 +14,7 @@ def get_chiste():
     chiste_elegido =random.choice(chistes)
     try:
         
-        response_emoji = requests.get("http//servicio-emojis:5001/emoji")
+        response_emoji = requests.get("http://servicio-emojis:5001/emoji")
         emoji = response_emoji.json()['emoji']
     except requests.exceptions.ConnectionError:
         emoji = "😒"
